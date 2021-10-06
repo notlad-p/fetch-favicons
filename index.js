@@ -1,7 +1,6 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const puppeteer = require("puppeteer");
 
 const getLinks = require("./api/links");
 const getTile = require("./api/tile");
@@ -10,32 +9,6 @@ const getFavicon = require("./api/favicon");
 
 const app = express();
 const port = process.env.PORT || 3000;
-
-/* 
-
-  Inspiration:
-  https://favicongrabber.com/
-  https://github.com/wonoly/favicons
-  https://github.com/zongyz/get-website-favicon
-  https://github.com/normanlol/retrieve-favicon
-
-*/
-
-/* 
-
-  To do:
-
-  Organize code: DONE
-    - Api folder
-      - router.js - for route
-      - manifest.js
-      - favicon.js
-      - links.js
-      - tile.js
-
-  Request manifest data in manifest.js
-
-*/
 
 // send error if domain is not present
 app.get("/api", (req, res) => {
